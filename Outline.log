@@ -1,0 +1,42 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.17)  18 SEP 2015 16:45
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Outline.tex
+(./Outline.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 21 languages loaded.
+
+! LaTeX Error: File `llncs.cls' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: cls)
+
+Enter file name: test
+
+! LaTeX Error: File `test.cls' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: cls)
+
+Enter file name: X
+
+ )
+(\end occurred when \ifx on line 36 was incomplete)
+(\end occurred when \ifx on line 36 was incomplete)
+(\end occurred when \ifx on line 36 was incomplete) 
+Here is how much of TeX's memory you used:
+ 11 strings out of 494501
+ 180 string characters out of 6167030
+ 47480 words of memory out of 5000000
+ 3389 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 319 hyphenation exceptions out of 8191
+ 11i,0n,7p,83b,8s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+No pages of output.
+PDF statistics:
+ 0 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
