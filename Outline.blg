@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Outline.aux
+The style file: plain-annote.bst
+Database file #1: Bibliography.bib
+Warning--can't use both volume and number fields in jennings2013touch
+You've used 8 entries,
+            2174 wiz_defined-function locations,
+            567 strings with 7051 characters,
+and the built_in function-call counts, 3072 in all, are:
+= -- 313
+> -- 112
+< -- 4
++ -- 45
+- -- 36
+* -- 213
+:= -- 470
+add.period$ -- 27
+call.type$ -- 8
+change.case$ -- 40
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 128
+empty$ -- 260
+format.name$ -- 36
+if$ -- 670
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 10
+newline$ -- 51
+num.names$ -- 16
+pop$ -- 51
+preamble$ -- 1
+purify$ -- 34
+quote$ -- 0
+skip$ -- 95
+stack$ -- 0
+substring$ -- 220
+swap$ -- 42
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 28
+warning$ -- 1
+while$ -- 31
+width$ -- 9
+write$ -- 100
+(There was 1 warning)

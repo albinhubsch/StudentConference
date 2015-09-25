@@ -1,0 +1,82 @@
+\begin{thebibliography}{1}
+
+\bibitem{gong2004guidelines}
+Jun Gong and Peter Tarasewich.
+\newblock Guidelines for handheld mobile device interface design.
+\newblock In {\em Proceedings of DSI 2004 Annual Meeting}, pages 3751--3756.
+  Citeseer, 2004.
+ \begin{quotation}\noindent Good paper containing proposed design guidelines
+  for mobile devices. It discuss limitations with mobile devices compared to
+  desktop environments that has been around for a much longer time.
+  \end{quotation}
+
+\bibitem{hoober2011designing}
+Steven Hoober and Eric Berkman.
+\newblock {\em Designing mobile interfaces}.
+\newblock " O'Reilly Media, Inc.", 2011.
+ \begin{quotation}\noindent Book that gives a deeper look into designing mobile
+  interfaces. A lot of inspiration and good work practices with do's and
+  dont's. Also general guidelines for designing mobile interfaces are
+  presented. \end{quotation}
+
+\bibitem{jennings2013touch}
+Anthony Jennings, Spencer Ryser, and Frank Drews.
+\newblock Touch screen devices and the effectiveness of user interface methods.
+\newblock In {\em Proceedings of the Human Factors and Ergonomics Society
+  Annual Meeting}, volume~57, pages 1648--1652. SAGE Publications, 2013.
+ \begin{quotation}\noindent Report examining how different methods for
+  completing tasks on touch screens with different sizes. Scrolling and zooming
+  with different methods are tested and evaluated with errors of action and
+  time as parameters. The report provides some design guidelines at the end.
+  \end{quotation}
+
+\bibitem{jorgensen1999software}
+Magne J{\o}rgensen.
+\newblock Software quality measurement.
+\newblock {\em Advances in engineering software}, 30(12):907--912, 1999.
+ \begin{quotation}\noindent An article that examines possible ways of measure
+  software quality. A lot of theories on software quality measure.
+  \end{quotation}
+
+\bibitem{norman2013design}
+Donald~A Norman.
+\newblock {\em The design of everyday things: Revised and expanded edition}.
+\newblock Basic books, 2013.
+ \begin{quotation}\noindent An old classic. A lot of useful tips and guidelines
+  on how design works in everyday things. Will be used when the guidelines will
+  be formed. \end{quotation}
+
+\bibitem{paredes2014sosphone}
+Hugo Paredes, Benjamim Fonseca, Miriam Cabo, Tania Pereira, and Filipe
+  Fernandes.
+\newblock Sosphone: a mobile application for emergency calls.
+\newblock {\em Universal Access in the Information Society}, 13(3):277--290,
+  2014.
+ \begin{quotation}\noindent This paper includes a very interesting evaluation
+  process were they evaluate a SOSPhone prototype made for use in emergency
+  situations. \end{quotation}
+
+\bibitem{sax2009point}
+Christian Sax and Elaine Lawrence.
+\newblock Point-of-treatment: Touchable e-nursing user interface for medical
+  emergencies.
+\newblock In {\em Mobile Ubiquitous Computing, Systems, Services and
+  Technologies, 2009. UBICOMM'09. Third International Conference on}, pages
+  89--95. IEEE, 2009.
+ \begin{quotation}\noindent This paper runs through the process of how they
+  designed a e-nursing application with a user interface especially made for
+  emergency situations. The paper also investigates how the touch screen UI
+  performs. \end{quotation}
+
+\bibitem{wu2003improving}
+Jen-Her Wu and Yufei Yuan.
+\newblock Improving searching and reading performance: the effect of
+  highlighting and text color coding.
+\newblock {\em Information \& Management}, 40(7):617--637, 2003.
+ \begin{quotation}\noindent This paper investigates how colors and highlights
+  affects read performance. They tried different color combinations, various
+  luminosity in background and foreground and hue combinations. With
+  highlighting they tried colors, reverse video and blinking. Based on the
+  findings in their paper they propose some design guidelines. \end{quotation}
+
+\end{thebibliography}
