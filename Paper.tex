@@ -22,7 +22,7 @@
 % For the outline and annotated bibliography (deliverable 2)
 % you must use the following command:
 %
-\documentclass[runningheads,a4paper,oribibl]{llncs}
+% \documentclass[runningheads,a4paper,oribibl]{llncs}
 %
 % For the full and final paper (deliverables 3 and 4a/b)
 % you must use the command below (and put the one above in comments).
@@ -57,7 +57,7 @@
 
 % \titlerunning{Touch Interfaces for Robotic Nozzles in Emergency Situations}
 
-\titlerunning{asd}
+\titlerunning{Can high color contrast increase user reaction time}
 
 \author{Albin Hübsch}
 
@@ -82,62 +82,62 @@ Here goes paper abstract
 %%%%% END OF 2nd ADJUSTMENTS SECTION %%%%%
 
 \section{Introduction}
-The main goal with this paper is to evaluate if color contrast has a significant impact on reaction time and usability in web based smart-phone applications. Consumer touch screen devices such as smart-phones has rapidly increased in amount and availability recent years. The touch screen technology have made great advances ~\cite{jennings2013touch} and it is more frequently used as a way of receiving user input. When technology moves to a broader audience, higher demands on usability needs to be set~\cite{gong2004guidelines}. 
+The main goal with this paper is to evaluate if color contrast has a significant impact on usability in web based smart-phone applications. Consumer touch screen devices such as smart-phones has rapidly increased in amount and availability recent years. The touch screen technology have made great advances ~\cite{jennings2013touch} and it is more frequently used as a way of receiving user input. When this technology moves to a broader audience, higher demands on usability needs to be set~\cite{gong2004guidelines}. To further explore how usability can be improved using touch screen technology we are in this paper investigating if reaction time (referred to as RT in this paper) and user input errors (referred to as IE in this paper) can reach better results by increasing color contrast within the interface. Earlier work done in this field are exploring how we perceive different color contrast and how it can affect our reading performance~\cite{wu2003improving}. It has also been proved that Chromaticity, Contrast, and Cone Opponency in color space can affect RTs~\cite{mckeefry2003simple}. Many best practices for Mobile development also shows that "requirements for sufficient color contrast"~\cite{marcus2013design} must be meet to best exaggerate the content. But still the question remains, if a high color contrast interface can increase the the RT\footnote{Reaction time: the time it takes for a user to react on instructions} and decrease user IE\footnote{Input errors: the number of user input errors when interacting with a system}.
 
-=== OLD BELOW
-
-The main goal with this paper is to evaluate if color contrast has a significant impact on usability when using a touch screen smart phone application for controlling robotic nozzles in emergency situations. From the results we will suggest four design guidelines to be used when designing applications for similar use or in similar situations. Consumer touch screen devices such as smart phones has increased in amount rapidly recent years and the touch screen technology have made great advances~\cite{jennings2013touch}. Since these devices now are available to almost everyone, higher demands on usability needs to be set~\cite{paredes2014sosphone}.
-
-Unifire, a company that builds robotic nozzles for water cannons has just introduced a controlling system to steer the nozzles from an application that can run on almost all touch screen smart phones (2015). But the use cases of this application, often in different emergency situations sets high demands on great usability. Defining great usability as fast and low on user input errors. A simplified version of this nozzle control application was modified to be used in these test.
+High RTs and low user IE are especially desirable when designing user interfaces for situations with high demands on quick user input and low error tolerance such as emergency situations. The results of this paper can be used by any designer or developer.
 
 \section{Method}
-In order to be able to test if color contrast has an substantial impact on the usability of a touch user interface we have two versions of the same simplified application for controlling robotic nozzles. The only difference between the two versions is that the first one has the characteristics of low contrast and the second one high contrast. We conducted an A/B test to measure the usability performance of the two versions. The usability performance was measured using two parameters, time and errors.
-\begin{description}
-\item[Time] is measured to be able to see if one version is faster.
-\item[Errors] are calculated to see if one of the versions tend to produce more user error inputs.
-\end{description}
+In order to be able to test if color contrast has an substantial impact on the RT and user IE of a touch user interface we have designed a simple web application for an Android smart-phone. The application exists in two versions, one with low color (LC) contrast and one with high color contrast (HC) as can be seen in Fig~\ref{fig:application}.
 
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{application}
+	\caption{Our two color contrast versions of our application designed.\label{fig:application}}
+\end{figure}
+
+We designed the application by following design guidelines given here~\cite{hoober2011designing} and~\cite{johnson2013designing}. 
 
 \subsection{Designing the A/B test}
-The conducted A/B test consists of two versions of the same application. One high contrast and one low contrast. Both applications are simplified versions of the robotic nozzle controlling application. We simplified the application by exchanging all icons to more basic shapes like square, circle, triangle and a rhomb. ~\ref{fig:application}) or \textit{PNG}
+We conducted an A/B test to measure the differences in RT and IE between the two versions. An A/B test is a commonly used method by developers and designers to test differences in performance between applications when the differentiated factors are known~\cite{johnson2013designing}. As in this case our known factor is the contrast difference. 
 
-The application consists of 4 soft buttons, each representing a function. We designed a program to give instructions on a secondary monitor. The instructions was a series of shapes equally to the shapes in the application and the test persons where told to press the representative shape in the application as fast as they could to simulate an stressful situation. If they pressed the wrong button they where told just to continue and press the right one. Both the application and the instruction program are logging timestamps for all input and counting user input errors.
+The application consists of 4 buttons~\footnote{On screen button}, each button representing a function. To fraction each button from the others we put a unique shape in each button. The shapes we used are a, square, circle, triangle and a rhomb~\ref{fig:application}.
 
-Each version of the application was tested on [NUMBER PLACEHOLDER] persons all within the same age group (20-30) and with a variety of backgrounds.
+To be able to give the test persons consistent instructions through the complete test we designed a program that presented the instructions on a secondary screen. The instructions were a series of shapes equally to the shapes in the application buttons and the test persons where told to press the representative shape in the application as fast as they could to measure the reaction time. If they pressed the wrong button they where told to continue the test by pressing the right button, the application registered this as an IE. Each test were performed indoors with varying surroundings such as different lightning conditions and noise levels. We tested each version of the application on 5 persons all within the same age group (20-30) and with a variety of backgrounds. We had a gender split of 50\% women and 50\% men. In total we got 10 test results that we later analyzed against each other to measure if any differences in RTs or IEs between the two versions could be statistically confirmed.
 
 \subsection{Evaluation of the A/B test}
-This section will in short describe the evaluation process of the A/B test. How the test results were collected and what parameters we have had focus on during the test.
+Our test data received from the tests consisted of UNIX timestamps~\footnote{\url{http://www.unixtimestamp.com/}} in milliseconds. Each time the user interacted with the application it registered which button that was pressed and saved it together with a UNIX timestamp. Equally, every time the instruction program showed a new symbol it logged that together with a UNIX timestamp. As a result we received two data sets of symbols with corresponding timestamps for each test person, resulting in a total of approximately 400 records. Although the data were hard to interpret due to its compact look, a pyhton program were written to clean it up. We calculated each difference (RT) in time between when the instruction were given and when user interaction registered. Out of this we could calculate the mean RT for both groups LC and HC. The calculation of RT did not take in consideration if user input were a no match. We still considered it as an reaction.
+
+IEs were counted every time the user pressed a non matching object compared to the one given in the instructions. All IEs in each group, LC and HC, were counted to see if one of the groups produced more IEs.
 
 \section{Result}
-All results produced from the tests are here presented with clear numbers, conclusions and figures/graphics.
+From our results we can not draw any statistically significant differences in RT between the two groups HC and LC. This is most probably due to corrupt test data, a result from limitations in web application technology, see section \ref{sec:discussion}. With the IEs we found a significant difference between the groups.
 
-\subsection{Evaluation}
-The evaluation itself and a text about the evaluation results.
+\subsection{Reaction Times (RT)}
+asd
 
-\section{Discussion}
-In this section we will discuss the results from the tests. We will discuss what the results mean and how they should and could be interpreted.
+\subsection{Input Errors}
+asd
 
-\subsection{Conclusions and Guidelines}
-Here we will present our conclusions based on the resulting outcome from the tests. We will also present our four guidelines on how to design a touch interface compatible for emergency situations. These guidelines will be created based on the test results.
+\section{Discussion} \label{sec:discussion}
+In this section we will discuss the results from the tests. We will discuss what the results mean and how they should and could be interpreted. We are currently in the stage of analyzing our data.
 
-Below follows our guidelines that we have designed from our test results. The guidelines can be used when designing a 
+\subsection{Drawbacks and Limitations} \label{subsec:drawbacks}
+One of the main drawbacks of this study is the limited number of test subjects. In order to get more credible result a larger group of test persons should be included. Preferable we should also had let the test persons do the test several of times to eliminate possible surrounding factors that could have affect the results. 
 
-\subsection{Drawbacks and Limitations}
-This paper should not be used as a scientific foundation for any kind of argument. There are to many parameters affecting the results. Time limitation during the research period had a big influence on the credibility of the whole paper. We would like to emphasize some of the biggest drawbacks in the research and the paper by listing them below. \emph{Note that it is highly possible that there exists drawbacks not mentioned here}.
-
+Below is a asd
 \begin{description}
-	\item[Our group of test subjects was to small] To be able to get a more statistical valid result the test group has to be bigger.
-	\item[Possibly bad simulation of emergency situation] Due to the limited time reserved for this paper and its research a true simulation of an emergency situation could not be set. We did our best but it could had been done better.
-	\item[Many affecting parameters] The prototype is simple in its appearance but there are still many parameters that can affect the user interaction. Icons, icon size, optimal number of soft-buttons etc. All this, and more, should have been researched if done again. 
+	\item[Our group of test subjects is to small] To be able to get a more statistical valid result the test group has to be bigger.
+	\item[Many affecting parameters] The prototype is simple in its appearance but there are still many parameters that can affect the users interaction and their RTs. Icons, icon size, optimal number of soft-buttons, size of hand-held device etc. All this, and more, should have been researched and taken into account if done again. 
+	\item[Limited test environment] Our tests were made with using an Android smart-phone~\footnote{OnePlus two \url{https://oneplus.net/2}} system and the application were done using HTML5 and CSS3. We can not surely imply, without testing, that the same results would appear on an iPhone or any other smart-phone.
 \end{description}
 
 \subsection{Future Work}
-Due to extremely limited time given for this paper there are many things that could be improved, made differently or simply just continued to be worked on. We have some concrete suggestions that could be a case for future work.
+Due to limited time given for this paper there are things that could be improved or just continued to be worked on. We have some concrete suggestions that could be a case for future work.
 
 \begin{itemize}
-	\item Extend the test group with more subjects. The patterns that slightly appeared in our results could with a bigger test group be more significant.
-	\item Make the same tests but with a better simulation of an emergency situation. Our proposal to this is to stage an emergent situation and make the test person interact with the complete situation.
-	\item Our collected test data can be downloaded and used freely to investigate other aspect not mentioned in this paper. One proposal is to look at the different shapes and try to detect possible error patterns between them.
+	\item Extend the test group with more test subjects. It is possible to think that the patterns that slightly appeared in our results will appear even more significant with a larger group of test subjects.
+	\item Our collected test data can be downloaded and used freely to investigate other aspect not mentioned in this paper. One proposal is to look at the different shapes and try to detect possible error patterns between them. Is the rhomb more frequently pressed wrongly compared to the other shapes?
+	\item Does our results apply on other systems and techniques? Our tests are limited to the Android system and a web application solution. It remains to answer if our results applies on all other systems. This is also a way of isolate some of all the affecting parameters mentioned in~\ref{subsec:drawbacks}.
 \end{itemize}
 
 %%%%% BEGIN OF 3rd ADJUSTMENTS SECTION %%%%%
