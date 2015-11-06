@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{jennings2013touch}
 Jennings, A., Ryser, S., Drews, F.:
@@ -43,24 +43,6 @@ Johnson, J.:
 \newblock Designing with the Mind in Mind: Simple Guide to Understanding User
   Interface Design Guidelines.
 \newblock Elsevier (2013)
-
-\bibitem{paredes2014sosphone}
-Paredes, H., Fonseca, B., Cabo, M., Pereira, T., Fernandes, F.:
-\newblock Sosphone: a mobile application for emergency calls.
-\newblock Universal Access in the Information Society \textbf{13}(3) (2014)
-  277--290
-
-\bibitem{sax2009point}
-Sax, C., Lawrence, E.:
-\newblock Point-of-treatment: Touchable e-nursing user interface for medical
-  emergencies.
-\newblock In: Mobile Ubiquitous Computing, Systems, Services and Technologies,
-  2009. UBICOMM'09. Third International Conference on, IEEE (2009)  89--95
-
-\bibitem{jorgensen1999software}
-J{\o}rgensen, M.:
-\newblock Software quality measurement.
-\newblock Advances in engineering software \textbf{30}(12) (1999)  907--912
 
 \bibitem{norman2013design}
 Norman, D.A.:

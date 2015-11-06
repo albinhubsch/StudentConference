@@ -95,25 +95,33 @@ In order to be able to test if color contrast has an substantial impact on the R
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{application}
-	\caption{Our two versions of the application designed with different color contrast.\label{fig:application}}
+	\caption{Our two versions of the application designed with different color contrast.
+	\label{fig:application}}
 \end{figure}
 
-We designed the application by following design guidelines given here~\cite{hoober2011designing} and~\cite{johnson2013designing}. 
+We designed the application by following design guidelines given here~\cite{hoober2011designing}~\cite{johnson2013designing}~\cite{gong2004guidelines}~\cite{norman2013design}.
 
 \subsection{Designing the A/B test}
 We conducted an A/B test to measure the differences in RT and IE between the two versions. An A/B test is a commonly used method by developers and designers to test differences in performance between applications when the differentiated factors are known~\cite{johnson2013designing}. As in this case our known factor is the contrast difference. 
 
-The application consists of 4 buttons~\footnote{On screen button}, each button representing a function. To fraction each button from the others we put a unique shape in each button. The shapes we used are a, square, circle, triangle and a rhomb~\ref{fig:application}.
+The application consists of 4 buttons\footnote{On screen button}, each button representing a function. To fraction each button from the others we put a unique shape in each button. The shapes we used are a, square, circle, triangle and a rhomb~\ref{fig:application}.
 
-To be able to give the test persons consistent instructions through the complete test we designed a program that presented the instructions on a secondary screen. The instructions were a series (20) of shapes equally to the shapes in the application buttons and the test persons where told to press the representative shape in the application as fast as they could to measure the reaction time. If they pressed the wrong button they where told to continue the test by pressing the right button, the application registered this as an IE. Each test were performed indoors with varying surroundings such as different lightning conditions and noise levels. We tested each version of the application on 5 persons all within the same age group (20-30) and with a variety of backgrounds. We had a gender split of 50\% women and 50\% men. In total we got 10 test results that we later analyzed against each other to measure if any differences in RTs or IEs between the two versions could be statistically confirmed.
+To be able to give the test persons consistent instructions through the complete test we designed a program that presented the instructions on a secondary screen. 
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{instructions}
+	\caption{Our program designed to present user instructions.
+	\label{fig:instructions}}
+\end{figure}
+The instructions was a series of 20 instructions with shapes equally to the shapes in the application buttons. The test persons where told to press the representative shape in the application as fast as they could to measure the reaction time. If they pressed the wrong button they where told to continue the test by pressing the right button, the application registered this as an IE. Each test were performed indoors with varying surroundings such as different lightning conditions and noise levels. We tested each version of the application on 5 persons all within the same age group (20-30) and with a variety of backgrounds. We had a gender split of 50\% women and 50\% men. In total we got 10 test results that we later grouped into LC and HC. We analyzed them against each other to measure if any differences in RTs or IEs between the two versions could be statistically confirmed.
 
 \subsection{Evaluation of the A/B test}
-Our test data received from the tests consisted of UNIX timestamps~\footnote{\url{http://www.unixtimestamp.com/}} in milliseconds. Each time the user interacted with the application it registered which button that was pressed and saved it together with a UNIX timestamp. Equally, every time the instruction program showed a new symbol it logged that together with a UNIX timestamp. As a result we received two data sets of symbols with corresponding timestamps for each test person, resulting in a total of approximately 400 records. Although the data were hard to interpret due to its compact look, a python script were written to clean it up. We calculated each difference (RT) in time between when the instruction were given and when user interaction registered. Out of this we could calculate the mean RT for both groups LC and HC. The calculation of RT did not take in consideration if user input were a no match. We still considered it as an reaction.
+Our test data received from the tests consisted of UNIX timestamps\footnote{\url{http://www.unixtimestamp.com/}} in milliseconds. Each time the user interacted with the application it registered which button that was pressed and saved it together with a UNIX timestamp. Equally, every time the instruction program showed a new symbol it logged that together with a UNIX timestamp. As a result we received two data sets of symbols with corresponding timestamps for each test person, resulting in a total of approximately 400 records. Although the data were hard to interpret due to its compact look, a python script were written to clean it up. We calculated each difference (RT) in time between when the instruction were given and when user interaction registered. Out of this we could calculate the mean RT for both groups LC and HC. The calculation of RT did not take in consideration if user input were a no match. We still considered it as an reaction.
 
 IEs were counted every time the user pressed a non matching object compared to the one given in the instructions. All IEs in each group, LC and HC, were counted to see if one of the groups produced more IEs.
 
 \section{Result}
-From our results we can not draw any statistically significant differences in RT between the two groups HC and LC. This is most probably due to corrupt test data, a result from limitations in web application technology, see section \ref{subsec:drawbacks}. With IEs we found that the LC group produced significantly more IEs than the HC group.
+From our results we can not draw any statistically significant differences in RT between the two groups HC and LC. This is most probably due to corrupt test data, a result from limitations in web application technology, see section \ref{subsec:discussion}. With IEs we found that the LC group produced significantly more IEs than the HC group.
 
 \subsection{Reaction Times (RT)}
 Table~\ref{tab:groupRT} shows our average RT and standard deviation for each group. According to the results people in HC had insignificant slower RTs compared to the ones in LC.
@@ -131,7 +139,7 @@ Table~\ref{tab:groupRT} shows our average RT and standard deviation for each gro
 	\caption{Average RT and standard deviation for each group, LC and HC.}
 \end{table}
 
-To validate that the groups RTs are insignificantly different we assumed the two data sets where normal distributed and performed a two tailed T-Test. The T-Test produced a p-value of 0.17 which is bigger than a desired error margin ($\alpha$) of 5\%. The T-Test is therefore proving that no differences in RT can be shown with our data. But regardless what the t-test says our standard deviations are hinting that something might be wrong with our data, please see section \ref{subsec:drawbacks}.
+To validate that the groups RTs are insignificantly different we assumed the two data sets where normal distributed and performed a two tailed T-Test. The T-Test produced a p-value of 0.17 which is bigger than a desired error margin ($\alpha$) of 5\%. The T-Test is therefore proving that no differences in RT can be shown with our data. But regardless what the t-test says our standard deviations are hinting that something might be wrong with our data, please see section \ref{subsec:discussion}.
 
 \subsection{Input Errors (IE)}
 None of the groups where completely free from user IEs. As can be seen in table~\ref{tab:userIE} users that were given the LC interface produced 475\% more IEs than the HC group.
@@ -149,38 +157,44 @@ None of the groups where completely free from user IEs. As can be seen in table~
 	\caption{Number of user IEs registered in each group and a calculation of IEs per user in each group}
 \end{table}
 
-Table~\ref{tab:userIE} shows us that there is a significant difference in number of IEs between the groups. The results also shows us that the users in the HC group had a more stable and consistent performance compared to LC group.
+Table~\ref{tab:userIE} shows us that there is a significant difference in number of IEs between the groups. The results also show us that the users in the HC group generally performed more stable and consistent compared to the LC group.
 
-\section{Discussion} \label{sec:discussion}
-Our test results has shown that we can not increase the user reaction time by using a high color contrast interface when using a smart phone web based application. However we could see that the high color contrast interface was more reliable in performance when it comes to the amount of user input errors. This is fact according to our results. But what we have seen in our collected test data can strongly negotiate the legibility of the results.
+\section{Discussion}\label{sec:discussion}
+Our test results has shown that we can not increase the user reaction time by using a high color contrast interface when using a smart phone web based application. However we could see that the high color contrast interface was more reliable in performance when it comes to the amount of user input errors. This is fact according to our results. But what we have seen in our collected test data can strongly negotiate the legibility of the results. The calculated standard deviations gave us hints on that something were wrong so we dug deeper into each test persons results and found that the data must be corrupt. We found that we randomly receive negative RTs which in theory should be completely impossible. We were prepared that the timestamps could be off sync with each others but that would be easy to compensate. Here we got inconsistent hick ups in our timestamps. We suspect this is a result from either hardware limitations or limitations in the JavaScript\footnote{A prototype based dynamic scripting language} engine for web applications on android.
 
-\subsection{Drawbacks and Limitations} \label{subsec:drawbacks}
-TODO
-	- Diskutera problemet med testdatan och tekniska begränsningar
+As for this our conclusion is that HC interfaces are the preferred method to design interfaces as they deliver a more stable user interaction pattern. Apart from this, smart phone web based applications should only be used if, sometimes slow technology, user input errors and long reaction times from the user can be accepted.
 
-One of the main drawbacks of this study is the limited number of test subjects. In order to get more credible result a larger group of test persons should be included. Preferable we should also had let the test persons do the test several of times to eliminate possible surrounding factors that could have affect the results. 
+\subsection{Drawbacks and Limitations}\label{subsec:drawbacks}
+The main drawback of this study is the corrupt data set. We have to have this in mind when we draw any conclusions out of the results. This problem could be solved by simply rerun the whole test using a native smart phone application instead of a web based solution.
 
-Below is a asd
+Another drawback worth to mention is that, preferable we should also have had let the test persons do the test several number of times in order to eliminate possible surrounding factors that could have affected the results. We should also had let some of the test persons perform tests with both the LC and HC versions in order to see how fast they memorize patterns. 
+
+Further are some more drawbacks and limitations that we would like to mention.
 \begin{description}
-	\item[Our group of test subjects is to small] To be able to get a more statistical valid result the test group has to be bigger.
+	\item[Our group of test subjects is to small] To be able to get a more statistical valid result the test group has to be bigger. In this paper we also only assumed it was normal distributed, not tested.
 	\item[Many affecting parameters] The prototype is simple in its appearance but there are still many parameters that can affect the users interaction and their RTs. Icons, icon size, optimal number of soft-buttons, size of hand-held device etc. All this, and more, should have been researched and taken into account if done again. 
-	\item[Limited test environment] Our tests were made with using an Android smart-phone~\footnote{OnePlus two \url{https://oneplus.net/2}} system and the application were done using HTML5 and CSS3. We can not surely imply, without testing, that the same results would appear on an iPhone or any other smart-phone.
+	\item[Limited test environment] Our tests were made using an Android based smart-phone\footnote{OnePlus two \url{https://oneplus.net/2}} system and the application were made using HTML5\footnote{HyperText Markup Language, markup standard for WWW}, CSS3\footnote{Cascading Style Sheet, styling standard for WWW} and JavaScript. We can not surely imply, without testing, that the same results would appear on an iPhone or any other smart-phone or even with a native application.
 \end{description}
 
 \subsection{Future Work}
-Due to limited time given for this paper there are things that could be improved or just continued to be worked on. We have some concrete suggestions that could be a case for future work.
+Due to the failed data set that we received in this paper there are things that could be improved or continued to be worked on. 
+We do have some concrete suggestions that could be case for future work. 
 
 \begin{itemize}
+	\item Do tests using a native application.
 	\item Extend the test group with more test subjects. It is possible to think that the patterns that slightly appeared in our results will appear even more significant with a larger group of test subjects.
-	\item Our collected test data can be downloaded and used freely to investigate other aspect not mentioned in this paper. One proposal is to look at the different shapes and try to detect possible error patterns between them. Is the rhomb more frequently pressed wrongly compared to the other shapes?
-	\item Does our results apply on other systems and techniques? Our tests are limited to the Android system and a web application solution. It remains to answer if our results applies on all other systems. This is also a way of isolate some of all the affecting parameters mentioned in~\ref{subsec:drawbacks}.
+	\item Our collected test data can be downloaded and used freely to investigate other aspects not mentioned in this paper. One proposal is to look at the different shapes and try to detect possible error patterns between them. Is the rhomb more frequently a case for IE compared to the other shapes?
+	\item Does our results apply on other systems and techniques? Our tests are limited to the Android system and a web based application solution. It remains to answer if our results applies on all other systems. This is also a way of isolating some of the affecting parameters mentioned in~\ref{subsec:drawbacks}.
 \end{itemize}
+
+\section{Acknowledgments}
+The author would like to thank the peer reviewers who provided great valuable comments on both the content and structure of this paper.
 
 %%%%% BEGIN OF 3rd ADJUSTMENTS SECTION %%%%%
 % For the outline and annotated bibliography (deliverable 2)
 % you must use the following two commands:
 %
-\nocite{*}  % Includes ALL entries from the .bib-file, even if they are
+% \nocite{*}  % Includes ALL entries from the .bib-file, even if they are
             % not '\cite{}'-ed in the text above
 % \bibliographystyle{plain-annote}
 %
