@@ -92,7 +92,7 @@ Earlier studies completed in this field has explored how we perceive different c
 High RTs and low user IE are especially desirable when designing user interfaces for situations with high demands on quick user input and low error tolerance such as in emergency situations. The results of this paper can be used by any designer or developer.
 
 \section{Method}
-In order to be able to test if color contrast has an substantial impact on the RT and user IE of a touch user interface we have designed a simple web application for an Android smart-phone. The application exists in two versions, one with low color contrast (referred to as LCC in this paper) and one with high color contrast (referred to as HCC in this paper) as can be seen in Fig~\ref{fig:application}.
+In order to be able to test if color contrast has a substantial impact on the RT and UIE of a touch user interface we have designed a simple web application for an Android smart-phone. The application exists in two versions, one with low color contrast (referred to as LCC in this paper) and one with high color contrast (referred to as HCC in this paper) as can be seen in Fig~\ref{fig:application}. We conducted an A/B test to measure the performance between the versions.
 
 \begin{figure}
 	\centering
@@ -101,7 +101,7 @@ In order to be able to test if color contrast has an substantial impact on the R
 	\label{fig:application}}
 \end{figure}
 
-We designed the application by following design guidelines given here~\cite{hoober2011designing}~\cite{johnson2013designing}~\cite{gong2004guidelines}~\cite{norman2013design}. These guidelines can be seen as a set of rules to follow when designing any kind of user interface. 
+We designed the application by following design guidelines given here~\cite{hoober2011designing}~\cite{johnson2013designing}~\cite{gong2004guidelines}~\cite{norman2013design}. These guidelines can be seen as a set of rules to follow when designing any kind of user interface. We used guidelines to get proper sized buttons, good spacing between content and best positioning of navigation.
 
 \subsection{Designing the A/B test}
 We conducted an A/B test to measure the differences in RT and UIE between the two versions. An A/B test is a commonly used method by developers and designers to test differences in performance between applications when the differentiated factors are known~\cite{johnson2013designing}. Where in this case our known factor is the contrast difference. 
@@ -115,40 +115,39 @@ To be able to give the test persons consistent instructions through the complete
 	\caption{Our program designed to present user instructions.
 	\label{fig:instructions}}
 \end{figure}
-The instructions was a series of 20 instructions with shapes equally to the shapes in the application buttons. The test persons where told to press the representative shape in the application as fast as they could to measure the reaction time. If they pressed the wrong button they where told to continue the test by pressing the right button, the application registered this as an IE. Each test were performed indoors with varying surroundings such as different lightning conditions and noise levels. We tested each version of the application on 5 persons all within the same age group (20-30) and with a variety of backgrounds. We had a gender split of 50\% women and 50\% men. In total we got 10 test results that we later grouped into LC and HC. We analyzed them against each other to measure if any differences in RTs or IEs between the two versions could be statistically confirmed.
+The instructions were a series of 20 instructions with shapes equal to the shapes in the application buttons. The test persons were told to press the representative shape in the application as fast as they could in order to measure the reaction time. If they pressed the wrong button they were told to continue the test by pressing the right button, the application registered this as an UIE. Each test was performed indoors with varying surroundings such as different lightning conditions and noise levels. We tested each version of the application on 5 persons, all within the same age group (20-30) and with a variety of backgrounds. In total we got 10 test results with a gender split of 50\% women and 50\% men that we later grouped into LCC and HCC. We analyzed them against each other to measure if any differences in RT or UIE between the two versions could be statistically confirmed.
 
 \subsection{Evaluation of the A/B test}
-Our test data received from the tests consisted of UNIX timestamps\footnote{\url{http://www.unixtimestamp.com/}} in milliseconds. Each time the user interacted with the application it registered which button that was pressed and saved it together with a UNIX timestamp. Equally, every time the instruction program showed a new symbol it logged that together with a UNIX timestamp. As a result we received two data sets of symbols with corresponding timestamps for each test person, resulting in a total of approximately 400 records. Although the data were hard to interpret due to its compact look, a python script were written to clean it up. We calculated each difference (RT) in time between when the instruction were given and when user interaction registered. Out of this we could calculate the mean RT for both groups LCC and HCC. The calculation of RT did not take in consideration if user input were a no match. We still considered it as an reaction.
+Our test data received from the tests consisted of UNIX timestamps\footnote{More info at: \url{http://www.unixtimestamp.com/}} in milliseconds. Each time the user interacted with the application it registered which button that was pressed and saved it together with a UNIX timestamp. Equally, every time the instruction program showed a new symbol it logged the symbol together with a UNIX timestamp. As a result we received two data sets of symbols with corresponding timestamps for each test person, resulting in a total of approximately 400 records. Although the data was hard to interpret due to its compact look, a python script was written to structure the resulting timestamps into a more readable format. We calculated each difference (RT) in time between when the instruction was given and when user interaction registered. Out of this we could calculate the mean RT for both groups LCC and HCC. The calculation of RT did not take in consideration if user input was a no match. It was still considered as an reaction.
 
-IEs were counted every time the user pressed a non matching object compared to the one given in the instructions. All IEs in each group, LC and HC, were counted to see if one of the groups produced more IEs.
+IEs were counted every time the user pressed a non matching object compared to the one given in the instructions. All IEs in each group, LCC and HCC, were counted to see if one of the groups produced more UIEs.
 
 \section{Result}
-From our results we can not draw any statistically significant differences in RT between the two groups HC and LC. This is most probably due to corrupt test data, a result from limitations in web application technology, see section \ref{subsec:discussion}. With IEs we found that the LC group produced significantly more IEs than the HC group.
+From our results we can not draw any statistically significant differences in reaction time between the two groups high color contrast and low color contrast. This is most probably due to corrupt test data, a result from limitations in web application technology, see section \ref{sec:discussion}. With user input errors we found that the low color contrast group produced significantly more user input errors than the hight color contrast group.
 
 \subsection{Reaction Times (RT)}
-Table~\ref{tab:groupRT} shows our average RT and standard deviation for each group. According to the results people in HC had insignificant slower RTs compared to the ones in LC.
+Table~\ref{tab:groupRT} shows our average RT and standard deviation for each group. According to the results people in HCC had insignificant slower RTs compared to the ones in LCC.
 
 \begin{table}[]
 	\centering
-	\label{tab:groupRT}
 	\setlength{\tabcolsep}{1em}
 	\setlength\extrarowheight{1em}
 	\begin{tabular}{l|l|l}
 		\textbf{} & \textbf{Average RT} & \textbf{Standard Deviation} \\ \hline
-		\textbf{HC} & 782.69 ms & 968.67 ms \\ \hline
-		\textbf{LC} & 549.52 ms & 1393.03 ms
+		\textbf{HC} & 783 ms & 969 ms \\ \hline
+		\textbf{LC} & 550 ms & 1393 ms
 	\end{tabular}
-	\caption{Average RT and standard deviation for each group, LC and HC.}
+	\caption{Average reaction time and the standard deviation for each group, low color contrast and high color contrast.}
+	\label{tab:groupRT}
 \end{table}
 
-To validate that the groups RTs are insignificantly different we assumed the two data sets where normal distributed and performed a two tailed T-Test. The T-Test produced a p-value of 0.17 which is bigger than a desired error margin ($\alpha$) of 5\%. The T-Test is therefore proving that no differences in RT can be shown with our data. But regardless what the t-test says our standard deviations are hinting that something might be wrong with our data, please see section \ref{subsec:discussion}.
+To validate that the groups RTs are insignificantly different we assumed the two data sets where normal distributed and performed a two tailed T-Test. The T-Test produced a p-value of 0.17 which is bigger than a desired error margin ($\alpha$) of 5\%. The T-Test is therefore proving that no differences in RT exists within our data. But regardless what the t-test says our standard deviations are hinting that something might be wrong with our data (see section \ref{sec:discussion}).
 
 \subsection{Input Errors (IE)}
-None of the groups where completely free from user IEs. As can be seen in table~\ref{tab:userIE} users that were given the LC interface produced 475\% more IEs than the HC group.
+None of the groups where completely free from user input errors. As can be seen in table~\ref{tab:userIE} users that were given the LCC interface produced 475\% more UIE than the HCC group.
 
 \begin{table}[]
 	\centering
-	\label{tab:userIE}
 	\setlength{\tabcolsep}{1em}
 	\setlength\extrarowheight{1em}
 	\begin{tabular}{l|l|l|l}
@@ -157,25 +156,25 @@ None of the groups where completely free from user IEs. As can be seen in table~
 		\textbf{LC} & 19 & 3.49 & 3.8
 	\end{tabular}
 	\caption{Number of user IEs registered in each group and a calculation of IEs per user in each group}
+	\label{tab:userIE}
 \end{table}
 
-Table~\ref{tab:userIE} shows us that there is a significant difference in number of IEs between the groups. The results also show us that the users in the HC group generally performed more stable and consistent compared to the LC group.
+Table~\ref{tab:userIE} shows us that the users in the HCC group generally had a more stable and consistent performance compared to the LCC group. We also performed a two tailed t-test on the UIE data set. The outcome of this test was a p-value of 0.001 which is significantly smaller than a $\alpha$ of 5\% telling us that the HCC group performed better.
 
 \section{Discussion}\label{sec:discussion}
-Our test results has shown that we can not increase the user reaction time by using a high color contrast interface when using a smart phone web based application. However we could see that the high color contrast interface was more reliable in performance when it comes to the amount of user input errors. This is fact according to our results. But what we have seen in our collected test data can strongly negotiate the legibility of the results. The calculated standard deviations gave us hints on that something were wrong so we dug deeper into each test persons results and found that the data must be corrupt. We found that we randomly receive negative RTs which in theory should be completely impossible. We were prepared that the timestamps could be off sync with each others but that would be easy to compensate. Here we got inconsistent hick ups in our timestamps. We suspect this is a result from either hardware limitations or limitations in the JavaScript\footnote{A prototype based dynamic scripting language} engine for web applications on android.
+Our test results have shown that we can not increase the user reaction time by using a high color contrast interface when using a smart phone web based application. However we could see that the high color contrast interface was more reliable in performance when it comes to the amount of user input errors, according to our results. What we have seen in our collected test data can strongly negotiate the legibility of the results. The calculated standard deviations gave us hints on that something was wrong. We dug deeper into each test persons results and found that the data must be corrupt. We found that we had randomly received negative RTs which in theory should be completely impossible. We were prepared that the timestamps could be off sync due to individual system clocks and no boot pairing. This would have resulted in a consistent off sync. Instead we got inconsistent hick ups in our timestamps. We suspect this is a result from either hardware limitations or limitations in the JavaScript\footnote{A prototype based dynamic scripting language} engine for web applications on Android.
 
 As for this our conclusion is that HC interfaces are the preferred method to design interfaces as they deliver a more stable user interaction pattern. Apart from this, smart phone web based applications should only be used if, sometimes slow technology, user input errors and long reaction times from the user can be accepted.
 
 \subsection{Drawbacks and Limitations}\label{subsec:drawbacks}
-The main drawback of this study is the corrupt data set. We have to have this in mind when we draw any conclusions out of the results. This problem could be solved by simply rerun the whole test using a native smart phone application instead of a web based solution.
+The main drawback of this study is the corrupt data set. Something to have in mind when we draw any conclusions out of the results. This problem could be solved by simply rerunning the whole test using a native smart phone application instead of a web based solution.
 
-Another drawback worth to mention is that, preferable we should also have had let the test persons do the test several number of times in order to eliminate possible surrounding factors that could have affected the results. We should also had let some of the test persons perform tests with both the LC and HC versions in order to see how fast they memorize patterns. 
+Each test person performed only one test with a supervisory selected interface, the LCC or HCC version. To eliminate possible affecting surrounding factors each person should have done the test several times and with both the LCC and HCC interfaces. This would also have made it possible to recognize if the test persons memorized the patterns in any way.
 
-Further are some more drawbacks and limitations that we would like to mention.
 \begin{description}
-	\item[Our group of test subjects is to small] To be able to get a more statistical valid result the test group has to be bigger. In this paper we also only assumed it was normal distributed, not tested.
+	\item[Small test group] To be able to get a more statistical valid result the test group has to be bigger. In this paper we also only assumed it was normal distributed, we did not test it.
 	\item[Many affecting parameters] The prototype is simple in its appearance but there are still many parameters that can affect the users interaction and their RTs. Icons, icon size, optimal number of soft-buttons, size of hand-held device etc. All this, and more, should have been researched and taken into account if done again. 
-	\item[Limited test environment] Our tests were made using an Android based smart-phone\footnote{OnePlus two \url{https://oneplus.net/2}} system and the application were made using HTML5\footnote{HyperText Markup Language, markup standard for WWW}, CSS3\footnote{Cascading Style Sheet, styling standard for WWW} and JavaScript. We can not surely imply, without testing, that the same results would appear on an iPhone or any other smart-phone or even with a native application.
+	\item[Limited test environment] Our tests were made using an Android based smart-phone\footnote{OnePlus Two \url{https://oneplus.net/2}} system and the application were made using HTML5\footnote{HyperText Markup Language, markup standard for WWW}, CSS3\footnote{Cascading Style Sheet, styling standard for WWW} and JavaScript. We can not surely imply, without testing, that the same results would appear on an iPhone or any other smart-phone or even with a native application.
 \end{description}
 
 \subsection{Future Work}
@@ -183,14 +182,14 @@ Due to the failed data set that we received in this paper there are things that 
 We do have some concrete suggestions that could be case for future work. 
 
 \begin{itemize}
-	\item Do tests using a native application.
+	\item Perform tests using a native application.
 	\item Extend the test group with more test subjects. It is possible to think that the patterns that slightly appeared in our results will appear even more significant with a larger group of test subjects.
 	\item Our collected test data can be downloaded and used freely to investigate other aspects not mentioned in this paper. One proposal is to look at the different shapes and try to detect possible error patterns between them. Is the rhomb more frequently a case for IE compared to the other shapes?
-	\item Does our results apply on other systems and techniques? Our tests are limited to the Android system and a web based application solution. It remains to answer if our results applies on all other systems. This is also a way of isolating some of the affecting parameters mentioned in~\ref{subsec:drawbacks}.
+	\item Do our results apply on other systems and techniques? Our tests are limited to the Android system and a web based application solution. It remains to answer if our results applies on all other systems. This is also a way of isolating some of the affecting parameters mentioned in~\ref{subsec:drawbacks}.
 \end{itemize}
 
 \section{Acknowledgments}
-The author would like to thank the peer reviewers who provided great valuable comments on both the content and structure of this paper.
+The author would like to thank the peer reviewers who provided valuable comments on both the content and structure of this paper.
 
 %%%%% BEGIN OF 3rd ADJUSTMENTS SECTION %%%%%
 % For the outline and annotated bibliography (deliverable 2)
