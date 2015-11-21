@@ -79,20 +79,22 @@
 % the abstract in between them.
 %
 \begin{abstract}
-Here goes paper abstract
+This study aims to investigate if there is a performance difference between a high color contrast and a low color contrast touch screen interface. The performance was measured by combining the time each test subject took to respond on instructions (reaction time) and the number of input errors. The result shows that the high color contrast interface resulted in significantly fewer user input errors. There was no differences in reaction time between the two interfaces. 
 \end{abstract}
 %
+%
+This study aims to investigate if it is possible to receive better user performance when using a high color contrast compared to a low color contrast touch screen interface. The performance was measured by combining the time each user took to respond on instructions (reaction time) and the number of input errors from the user. Our result shows that the low color contrast interface produced 475\% more user input errors compared to the high color contrast interface. No difference in reaction time could be found between the two versions.
 %%%%% END OF 2nd ADJUSTMENTS SECTION %%%%%
 
 \section{Introduction}
 The main goal with this paper is to evaluate if color contrast has a significant impact on usability in web based smart-phone applications. Consumer touch screen devices such as smart-phones have rapidly increased in amount and availability recent years. The touch screen technology have made great advances~\cite{jennings2013touch} and it is frequently used as a way of receiving user input. When this technology moves to a broader audience, higher demands on usability needs to be set~\cite{gong2004guidelines}. To further explore how usability can be improved using touch screen technology we have in this paper investigated if reaction time (the time it takes for a user to react on instructions, further referred to as RT in this paper) and user input errors (the number of user input errors when interacting with a system, further referred to as UIE in this paper) can reach better results by increasing color contrast within the interface. Better results are assumed as faster RTs and less number of UIEs. 
 
-Earlier studies completed in this field has explored how we perceive different color contrast and how it can affect our reading performance~\cite{wu2003improving}. It has also been proved that chromaticity, contrast, and cone opponency in color space can affect RTs~\cite{mckeefry2003simple}. Many best practices for Mobile development have also shown that "requirements for sufficient color contrast"~\cite{marcus2013design} must be meet to best exaggerate the content. But still the question remains, if a high color contrast interface can increase the the RT and decrease user IE.
+Earlier studies completed in this field has explored how we perceive different color contrast and how it can affect our reading performance~\cite{wu2003improving}. It has also been proved that chromaticity, contrast, and cone opponency in color space can affect RTs~\cite{mckeefry2003simple}. Many best practices for Mobile development have also shown that "requirements for sufficient color contrast"~\cite{marcus2013design} must be met to best exaggerate the content. Still the question remains, can a high color contrast interface increase the the RT and decrease UIE?
 
 High RTs and low user IE are especially desirable when designing user interfaces for situations with high demands on quick user input and low error tolerance such as in emergency situations. The results of this paper can be used by any designer or developer.
 
 \section{Method}
-In order to be able to test if color contrast has a substantial impact on the RT and UIE of a touch user interface we have designed a simple web application for an Android smart-phone. The application exists in two versions, one with low color contrast (referred to as LCC in this paper) and one with high color contrast (referred to as HCC in this paper) as can be seen in Fig~\ref{fig:application}. We conducted an A/B test to measure the performance between the versions.
+In order to be able to test if color contrast has a substantial impact on the RT and UIE of a touch screen user interface we have designed a simple web application for an Android smart-phone. The application exists in two versions, one with low color contrast (referred to as LCC in this paper) and one with high color contrast (referred to as HCC in this paper) as can be seen in Fig~\ref{fig:application}. We conducted an A/B test to measure the performance between the versions.
 
 \begin{figure}
 	\centering
@@ -106,7 +108,7 @@ We designed the application by following design guidelines given here~\cite{hoob
 \subsection{Designing the A/B test}
 We conducted an A/B test to measure the differences in RT and UIE between the two versions. An A/B test is a commonly used method by developers and designers to test differences in performance between applications when the differentiated factors are known~\cite{johnson2013designing}. Where in this case our known factor is the contrast difference. 
 
-The application consists of 4 buttons\footnote{On screen button}, each button representing a function. To differentiate each button from the others we put a unique shape in each button. The shapes we used where a, square, circle, triangle and a rhomb (Fig~\ref{fig:application}).
+The application consists of 4 buttons\footnote{On screen button}, each button representing a function. To differentiate each button from the others we put a unique shape in each button. The shapes we used were a, square, circle, triangle and a rhomb (Fig~\ref{fig:application}).
 
 To be able to give the test persons consistent instructions through the complete test we designed a program that presented the instructions on a secondary screen. 
 \begin{figure}
@@ -115,12 +117,14 @@ To be able to give the test persons consistent instructions through the complete
 	\caption{Our program designed to present user instructions.
 	\label{fig:instructions}}
 \end{figure}
-The instructions were a series of 20 instructions with shapes equal to the shapes in the application buttons. The test persons were told to press the representative shape in the application as fast as they could in order to measure the reaction time. If they pressed the wrong button they were told to continue the test by pressing the right button, the application registered this as an UIE. Each test was performed indoors with varying surroundings such as different lightning conditions and noise levels. We tested each version of the application on 5 persons, all within the same age group (20-30) and with a variety of backgrounds. In total we got 10 test results with a gender split of 50\% women and 50\% men that we later grouped into LCC and HCC. We analyzed them against each other to measure if any differences in RT or UIE between the two versions could be statistically confirmed.
+The instructions were a series of 20 instructions with shapes identical to the ones in the application buttons. The test persons were told to press the representative shape in the application as fast as they could in order to measure the reaction time. If they pressed the wrong button they were told to continue the test by pressing the right button, the application registered this as an UIE. Each test was performed indoors with varying surroundings such as different lightning conditions and noise levels. 
+
+We tested each version of the application on 5 persons, all within the same age group (20-30) and with a variety of backgrounds. In total we got 10 test results with a gender split of 50\% women and 50\% men that we later grouped into LCC and HCC. We analyzed them against each other to measure if any differences in RT or UIE between the two versions could be statistically confirmed.
 
 \subsection{Evaluation of the A/B test}
-Our test data received from the tests consisted of UNIX timestamps\footnote{More info at: \url{http://www.unixtimestamp.com/}} in milliseconds. Each time the user interacted with the application it registered which button that was pressed and saved it together with a UNIX timestamp. Equally, every time the instruction program showed a new symbol it logged the symbol together with a UNIX timestamp. As a result we received two data sets of symbols with corresponding timestamps for each test person, resulting in a total of approximately 400 records. Although the data was hard to interpret due to its compact look, a python script was written to structure the resulting timestamps into a more readable format. We calculated each difference (RT) in time between when the instruction was given and when user interaction registered. Out of this we could calculate the mean RT for both groups LCC and HCC. The calculation of RT did not take in consideration if user input was a no match. It was still considered as an reaction.
+Our data received from the tests consisted of UNIX timestamps\footnote{More info at: \url{http://www.unixtimestamp.com/}} measured in milliseconds. Each time the user interacted with the application it registered which button that was pressed and saved it together with a UNIX timestamp. Equally, every time the instruction program showed a new symbol it logged the symbol together with a UNIX timestamp. As a result we received two data sets of symbols with corresponding timestamps for each test person, resulting in a total of 200 records. Although the data was hard to interpret due to its compact look, a python script was written to structure the resulting timestamps into a more readable format. We calculated each RT by subtracting the timestamp when the instruction was given from the registered user input timestamp. Out of this we could calculate the mean RT for both groups LCC and HCC. The calculation of RT did not take in consideration if user input was a no match. It was still considered as an reaction.
 
-IEs were counted every time the user pressed a non matching object compared to the one given in the instructions. All IEs in each group, LCC and HCC, were counted to see if one of the groups produced more UIEs.
+UIEs were counted every time the user pressed a non matching object compared to the one given in the instructions. All IEs in each group, LCC and HCC, were counted to see if one of the groups produced more UIEs.
 
 \section{Result}
 From our results we can not draw any statistically significant differences in reaction time between the two groups high color contrast and low color contrast. This is most probably due to corrupt test data, a result from limitations in web application technology, see section \ref{sec:discussion}. With user input errors we found that the low color contrast group produced significantly more user input errors than the hight color contrast group.
@@ -141,10 +145,10 @@ Table~\ref{tab:groupRT} shows our average RT and standard deviation for each gro
 	\label{tab:groupRT}
 \end{table}
 
-To validate that the groups RTs are insignificantly different we assumed the two data sets where normal distributed and performed a two tailed T-Test. The T-Test produced a p-value of 0.17 which is bigger than a desired error margin ($\alpha$) of 5\%. The T-Test is therefore proving that no differences in RT exists within our data. But regardless what the t-test says our standard deviations are hinting that something might be wrong with our data (see section \ref{sec:discussion}).
+To validate that the groups RTs are insignificantly different we assumed the two data sets where normal distributed based on the n>30 rule, and performed a two tailed T-Test. The T-Test produced a p-value of 0.17 which is bigger than a desired error margin ($\alpha$) of 5\%. The T-Test is therefore proving that no differences in RT exists within our data. But regardless what the t-test says our standard deviations are hinting that something might be wrong with our data (see section \ref{sec:discussion}).
 
 \subsection{Input Errors (IE)}
-None of the groups where completely free from user input errors. As can be seen in table~\ref{tab:userIE} users that were given the LCC interface produced 475\% more UIE than the HCC group.
+None of the groups where completely free from user input errors. As can be seen in table~\ref{tab:userIE}, users that were given the LCC interface produced 475\% more UIE than the HCC group.
 
 \begin{table}[]
 	\centering
@@ -164,7 +168,7 @@ Table~\ref{tab:userIE} shows us that the users in the HCC group generally had a 
 \section{Discussion}\label{sec:discussion}
 Our test results have shown that we can not increase the user reaction time by using a high color contrast interface when using a smart phone web based application. However we could see that the high color contrast interface was more reliable in performance when it comes to the amount of user input errors, according to our results. What we have seen in our collected test data can strongly negotiate the legibility of the results. The calculated standard deviations gave us hints on that something was wrong. We dug deeper into each test persons results and found that the data must be corrupt. We found that we had randomly received negative RTs which in theory should be completely impossible. We were prepared that the timestamps could be off sync due to individual system clocks and no boot pairing. This would have resulted in a consistent off sync. Instead we got inconsistent hick ups in our timestamps. We suspect this is a result from either hardware limitations or limitations in the JavaScript\footnote{A prototype based dynamic scripting language} engine for web applications on Android.
 
-As for this our conclusion is that HC interfaces are the preferred method to design interfaces as they deliver a more stable user interaction pattern. Apart from this, smart phone web based applications should only be used if, sometimes slow technology, user input errors and long reaction times from the user can be accepted.
+Our conclusion is that HCC interfaces are the preferred method to design interfaces as they deliver a more stable user interaction pattern. Apart from this, smart phone web based applications should only be used if sometimes slow technology, user input errors and long reaction times from the user can be accepted.
 
 \subsection{Drawbacks and Limitations}\label{subsec:drawbacks}
 The main drawback of this study is the corrupt data set. Something to have in mind when we draw any conclusions out of the results. This problem could be solved by simply rerunning the whole test using a native smart phone application instead of a web based solution.
@@ -172,9 +176,9 @@ The main drawback of this study is the corrupt data set. Something to have in mi
 Each test person performed only one test with a supervisory selected interface, the LCC or HCC version. To eliminate possible affecting surrounding factors each person should have done the test several times and with both the LCC and HCC interfaces. This would also have made it possible to recognize if the test persons memorized the patterns in any way.
 
 \begin{description}
-	\item[Small test group] To be able to get a more statistical valid result the test group has to be bigger. In this paper we also only assumed it was normal distributed, we did not test it.
-	\item[Many affecting parameters] The prototype is simple in its appearance but there are still many parameters that can affect the users interaction and their RTs. Icons, icon size, optimal number of soft-buttons, size of hand-held device etc. All this, and more, should have been researched and taken into account if done again. 
-	\item[Limited test environment] Our tests were made using an Android based smart-phone\footnote{OnePlus Two \url{https://oneplus.net/2}} system and the application were made using HTML5\footnote{HyperText Markup Language, markup standard for WWW}, CSS3\footnote{Cascading Style Sheet, styling standard for WWW} and JavaScript. We can not surely imply, without testing, that the same results would appear on an iPhone or any other smart-phone or even with a native application.
+	\item[Small test group.] To be able to get a more statistical valid result the test group has to be bigger.
+	\item[Many affecting parameters.] The prototype is simple in its appearance but there are still many parameters that can affect the users interaction and their RTs. Icons, icon size, optimal number of on screen buttons, size of hand-held device etc. All this, and more, should have been researched and taken into account if done again. 
+	\item[Limited test environment.] Our tests were made using an Android based smart-phone\footnote{OnePlus Two \url{https://oneplus.net/2}} and the application were made using HTML5\footnote{HyperText Markup Language, markup standard for WWW}, CSS3\footnote{Cascading Style Sheet, styling standard for WWW} and JavaScript. We can not surely imply, without testing, that the same results would appear on an iPhone or any other smart-phone or even with a native application.
 \end{description}
 
 \subsection{Future Work}
