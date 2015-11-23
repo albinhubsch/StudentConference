@@ -42,6 +42,7 @@
 % Albins Packages
 \usepackage{array}
 
+%
 \begin{document}
 
 \pagestyle{headings}
@@ -79,11 +80,11 @@
 % the abstract in between them.
 %
 \begin{abstract}
-This study aims to investigate if there is a performance difference between a high color contrast and a low color contrast touch screen interface. The performance was measured by combining the time each test subject took to respond on instructions (reaction time) and the number of input errors. The result shows that the high color contrast interface resulted in significantly fewer user input errors. There was no differences in reaction time between the two interfaces. 
+This study aims to investigate if it is possible to receive better user performance when using a high color contrast compared to a low color contrast touch screen interface in a mobile web application. The performance was measured by combining the time each user took to respond to instructions (reaction time) and the number of input errors from the user. Our result shows that the low color contrast interface produced 475\% more user input errors compared to the high color contrast interface. No difference in reaction time could be found between the two versions. 
 \end{abstract}
 %
 %
-This study aims to investigate if it is possible to receive better user performance when using a high color contrast compared to a low color contrast touch screen interface. The performance was measured by combining the time each user took to respond on instructions (reaction time) and the number of input errors from the user. Our result shows that the low color contrast interface produced 475\% more user input errors compared to the high color contrast interface. No difference in reaction time could be found between the two versions.
+%This study aims to investigate if there is a performance difference between a high color contrast and a low color contrast touch screen interface. The performance was measured by combining the time each test subject took to respond on instructions (reaction time) and the number of input errors. The result shows that the high color contrast interface resulted in significantly fewer user input errors. There was no differences in reaction time between the two interfaces.
 %%%%% END OF 2nd ADJUSTMENTS SECTION %%%%%
 
 \section{Introduction}
@@ -99,7 +100,7 @@ In order to be able to test if color contrast has a substantial impact on the RT
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{application}
-	\caption{Our two versions of the application designed with different color contrast.
+	\caption{Our two versions of the application designed with different color contrast. To the left the low color contrast interface and to the right the high color contrast interface. The application and its interface was designed specifically for this test.
 	\label{fig:application}}
 \end{figure}
 
@@ -114,7 +115,7 @@ To be able to give the test persons consistent instructions through the complete
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{instructions}
-	\caption{Our program designed to present user instructions.
+	\caption{Our program designed to present user instructions. Instructions were given in a series of 20. Between each instruction there was a delay set to be between 2.5 - 4 seconds. Each time a new symbol where showed a timestamp were logged in a unique user instruction file.
 	\label{fig:instructions}}
 \end{figure}
 The instructions were a series of 20 instructions with shapes identical to the ones in the application buttons. The test persons were told to press the representative shape in the application as fast as they could in order to measure the reaction time. If they pressed the wrong button they were told to continue the test by pressing the right button, the application registered this as an UIE. Each test was performed indoors with varying surroundings such as different lightning conditions and noise levels. 
@@ -141,11 +142,11 @@ Table~\ref{tab:groupRT} shows our average RT and standard deviation for each gro
 		\textbf{HC} & 783 ms & 969 ms \\ \hline
 		\textbf{LC} & 550 ms & 1393 ms
 	\end{tabular}
-	\caption{Average reaction time and the standard deviation for each group, low color contrast and high color contrast.}
-	\label{tab:groupRT}
+	\caption{Average reaction time and standard deviation for each group, low color contrast and high color contrast. A two tailed t-test was performed on the two groups and showed that no significant difference could be determined between them.
+	\label{tab:groupRT}}
 \end{table}
 
-To validate that the groups RTs are insignificantly different we assumed the two data sets where normal distributed based on the n>30 rule, and performed a two tailed T-Test. The T-Test produced a p-value of 0.17 which is bigger than a desired error margin ($\alpha$) of 5\%. The T-Test is therefore proving that no differences in RT exists within our data. But regardless what the t-test says our standard deviations are hinting that something might be wrong with our data (see section \ref{sec:discussion}).
+To validate that the groups RTs are insignificantly different we assumed the two data sets where normal distributed based on the n>30 rule, and performed a two tailed T-Test. The T-Test produced a p-value of 0.17 which is bigger than a desired error margin ($\alpha$) of 5\%. The T-Test is therefore proving that no differences in RT exists within our data. Regardless what the t-test says our standard deviations are indicating that something might be wrong with our data (see section \ref{sec:discussion}).
 
 \subsection{Input Errors (IE)}
 None of the groups where completely free from user input errors. As can be seen in table~\ref{tab:userIE}, users that were given the LCC interface produced 475\% more UIE than the HCC group.
@@ -159,8 +160,8 @@ None of the groups where completely free from user input errors. As can be seen 
 		\textbf{HC} & 4 & 1.10 & 0.8 \\ \hline
 		\textbf{LC} & 19 & 3.49 & 3.8
 	\end{tabular}
-	\caption{Number of user IEs registered in each group and a calculation of IEs per user in each group}
-	\label{tab:userIE}
+	\caption{Number of user input errors registered in each group and a calculation of IEs per user in each group. The low color contrast interface produced 475\% more UIE compared to the high color contrast version. A two tailed t-test also showed that there is a significant difference between the two versions. A high color contrast interface can therefore be a preferred design method if a low amount of user input errors is desired.
+	\label{tab:userIE}}
 \end{table}
 
 Table~\ref{tab:userIE} shows us that the users in the HCC group generally had a more stable and consistent performance compared to the LCC group. We also performed a two tailed t-test on the UIE data set. The outcome of this test was a p-value of 0.001 which is significantly smaller than a $\alpha$ of 5\% telling us that the HCC group performed better.
