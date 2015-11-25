@@ -81,7 +81,7 @@
 % the abstract in between them.
 %
 \begin{abstract}
-This study aims to investigate if it is possible to receive better user performance when using a high color contrast compared to a low color contrast touch screen interface in a mobile web application. The performance was measured by combining the time each user took to respond to instructions (reaction time) and the number of input errors from the user. Our result shows that the low color contrast interface produced 475\% more user input errors compared to the high color contrast interface. No difference in reaction time could be found between the two versions. 
+This study aims to investigate if it is possible to receive better user performance when using a high color contrast compared to a low color contrast touch screen interface in a mobile web application. The performance was measured by combining the time each user took to respond to instructions (reaction time) and the number of input errors the user made. Received test data appeared to be corrupt, most probably due to limitations in web application technology, despite this our result show that the low color contrast interface produced 475\% more user input errors compared to the high color contrast interface. No difference in reaction time could be found between the two versions.
 \end{abstract}
 %
 %
@@ -91,7 +91,7 @@ This study aims to investigate if it is possible to receive better user performa
 \section{Introduction}
 The main goal with this paper is to evaluate if color contrast has a significant impact on usability in web based smart-phone applications. Consumer touch screen devices such as smart-phones have rapidly increased in amount and availability recent years. The touch screen technology have made great advances~\cite{jennings2013touch} and it is frequently used as a way of receiving user input. When this technology moves to a broader audience, higher demands on usability needs to be set~\cite{gong2004guidelines}. To further explore how usability can be improved using touch screen technology we have in this paper investigated if reaction time (the time it takes for a user to react on instructions, further referred to as RT in this paper) and user input errors (the number of user input errors when interacting with a system, further referred to as UIE in this paper) can reach better results by increasing color contrast within the interface. Better results are assumed as faster RTs and less number of UIEs. 
 
-Earlier studies completed in this field has explored how we perceive different color contrast and how it can affect our reading performance~\cite{wu2003improving}. It has also been proved that chromaticity, contrast, and cone opponency in color space can affect RTs~\cite{mckeefry2003simple}. Many best practices for Mobile development have also shown that "requirements for sufficient color contrast"~\cite{marcus2013design} must be met to best exaggerate the content. Still the question remains, can a high color contrast interface increase the the reaction time and decrease the amount of user input errors?
+Earlier studies completed in this field have explored how we perceive different color contrast and how it can affect our reading performance~\cite{wu2003improving}. It has also been proved that chromaticity, contrast, and cone opponency in color space can affect RTs~\cite{mckeefry2003simple}. Many best practices for mobile development have also shown that "requirements for sufficient color contrast"~\cite{marcus2013design} must be met to best exaggerate the content. Still the question remains, can a high color contrast interface increase the the reaction time and decrease the amount of user input errors?
 
 High RTs and low UIEs are especially desirable when designing user interfaces for situations with high demands on quick user input and low error tolerance such as in emergency situations. The results of this paper can be used by any designer or developer.
 
@@ -101,11 +101,11 @@ In order to be able to test if color contrast has a substantial impact on the RT
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{application}
-	\caption{Our two versions of the application designed with different color contrast. To the left the low color contrast interface and to the right the high color contrast interface. The application and its interface was designed specifically for this test.
+	\caption{Our two versions of the application designed with different contrast. To the left the low contrast interface and to the right the high contrast interface. The application and its interface was designed specifically for this test. The bottom menu was added to give the interface more of a complete application feel. 
 	\label{fig:application}}
 \end{figure}
 
-We designed the application by following design guidelines given here~\cite{hoober2011designing}~\cite{johnson2013designing}~\cite{gong2004guidelines}~\cite{norman2013design}. These guidelines can be seen as a set of rules to follow when designing any kind of user interface. We used guidelines to get proper sized buttons, good spacing between content and best positioning of navigation.
+We designed the application by following design guidelines given here~\cite{hoober2011designing,johnson2013designing,gong2004guidelines,norman2013design}. These guidelines can be seen as a set of rules to follow when designing any kind of user interface. We used guidelines to get proper sized buttons, good spacing between content and best positioning of navigation.
 
 \subsection{Designing the A/B test}
 We conducted an A/B test to measure the differences in RT and UIE between the two versions. An A/B test is a commonly used method by developers and designers to test differences in performance between applications when the differentiated factors are known~\cite{johnson2013designing}. Where in this case our known factor is the contrast difference. 
@@ -116,20 +116,20 @@ To be able to give the test persons consistent instructions through the complete
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{instructions}
-	\caption{Our program designed to present user instructions. Instructions were given in a series of 20. Between each instruction there was a delay set to be between 2.5 - 4 seconds. Each time a new symbol where showed a timestamp were logged in a unique user instruction file.
+	\caption{Our program designed to present user instructions. Instructions were given in a series of 20. Between each instruction there was a delay set to be between 2.5 and 4 seconds. Each time a new symbol where showed a timestamp were logged in a unique user instruction file.
 	\label{fig:instructions}}
 \end{figure}
 The instructions were a series of 20 instructions with shapes identical to the ones in the application buttons. The test persons were told to press the representative shape in the application as fast as they could in order to measure the reaction time. If they pressed the wrong button they were told to continue the test by pressing the right button, the application registered this as an UIE. Each test was performed indoors with varying surroundings such as different lightning conditions and noise levels. 
 
-We tested each version of the application on 5 persons, all within the same age group (20-30) and with a variety of backgrounds. In total we got 10 test results with a gender split of 50\% women and 50\% men that grouped into LCC and HCC. We analyzed them against each other to measure if any differences in RT or UIE between the two versions could be statistically confirmed.
+We tested each version of the application on five persons, all within the same age group (20-30) and with a variety of backgrounds. In total we got 10 test results with a gender split of 50\% women and 50\% men that grouped into LCC and HCC. We analyzed them against each other to measure if any differences in RT or UIE between the two versions could be statistically confirmed.
 
 \subsection{Evaluation of the A/B test}
-Our data received from the tests consisted of UNIX timestamps\footnote{More info at: \url{http://www.unixtimestamp.com/}} measured in milliseconds. Each time the user interacted with the application it registered which button that was pressed and saved it together with a UNIX timestamp. Equally, every time the instruction program showed a new symbol it logged the symbol together with a UNIX timestamp. As a result we received two data sets of symbols with corresponding timestamps for each test person, resulting in a total of 200 records. Although the data was hard to interpret due to its compact look, a python script was written to structure the resulting timestamps into a more readable format. We calculated each RT by subtracting the timestamp when the instruction was given from the registered user input timestamp. Out of this we could calculate the mean RT for both groups LCC and HCC. The calculation of RT did not take in consideration if user input was a match with the instruction or not. It was still considered as an reaction.
+Our data received from the tests consisted of UNIX timestamps\footnote{More info at: \url{http://www.unixtimestamp.com/}} measured in milliseconds. Each time the user interacted with the application it registered which button that was pressed and saved it together with a timestamp. Equally, every time the instruction program showed a new symbol it logged the symbol together with a timestamp. As a result we received two data sets of symbols with corresponding timestamps for each test person, resulting in a total of 200 records. Although the data was hard to interpret due to its compact look, a python script was written to structure the resulting timestamps into a more readable format. We calculated each RT by subtracting the timestamp when the instruction was given from the registered user input timestamp. Out of this we could calculate the mean RT for both groups LCC and HCC. The calculation of RT did not take in consideration if user input was a match with the instruction or not. It was still considered as an reaction.
 
 UIEs were counted every time the user pressed a non matching object compared to the one given in the instructions. All input errors in each group, LCC and HCC, were counted to see if one of the groups produced more UIEs.
 
 \section{Result}
-From our results we can not draw any statistically significant differences in reaction time between the two groups high color contrast and low color contrast. This is most probably due to corrupt test data, a result from limitations in web application technology, see section \ref{sec:discussion}. With user input errors we found that the low color contrast group produced significantly more user input errors than the hight color contrast group.
+From our results we can not draw any statistically significant differences in reaction time between the two groups high color contrast and low color contrast. This is most probably due to corrupt test data, a result from limitations in web application technology, see Section \ref{sec:discussion}. With user input errors we found that the low color contrast group produced significantly more user input errors than the hight color contrast group.
 
 \subsection{Reaction Times (RT)}
 Table~\ref{tab:groupRT} shows our average reaction time and standard deviation for each group. According to the results people in the high color contrast group had insignificant slower reaction times compared to the ones in the low color contrast group.
@@ -150,7 +150,7 @@ Table~\ref{tab:groupRT} shows our average reaction time and standard deviation f
 To validate that the groups RTs are insignificantly different we assumed the two data sets where normal distributed based on the n>30 rule, and performed a two tailed t-test. The test produced a p-value of 0.17 which is bigger than a desired error margin ($\alpha$) of 5\%. The t-test is therefore proving that no differences in RT exists within our data. Regardless what the t-test says our standard deviations are indicating that something might be wrong with our data (see section \ref{sec:discussion}).
 
 \subsection{Input Errors (IE)}
-None of the groups where completely free from user input errors. As can be seen in table~\ref{tab:userIE}, users that were given the LCC interface produced 475\% more UIE than the HCC group.
+None of the groups where completely free from user input errors. As can be seen in Table~\ref{tab:userIE}, users that were given the LCC interface produced 475\% more UIE than the HCC group.
 
 \begin{table}[]
 	\centering
@@ -193,7 +193,7 @@ We do have some concrete suggestions that could be case for future work.
 	\item Perform tests using a native application.
 	\item Extend the test group with more test subjects. It is possible to think that the patterns that slightly appeared in our results will appear even more significant with a larger group of test subjects.
 	\item Our collected test data can be downloaded\footnote{Download here~\url{https://goo.gl/x8URSB}} and used freely to investigate other aspects not mentioned in this paper. One proposal is to look at the different shapes and try to detect possible error patterns between them. Is the rhomb more frequently a case for IE compared to the other shapes?
-	\item Do our results apply on other systems and techniques? Our tests are limited to the Android system and a web based application solution. It remains to answer if our results applies on all other systems. This is also a way of isolating some of the affecting parameters mentioned in~\ref{subsec:drawbacks}.
+	\item Do our results apply on other systems and techniques? Our tests are limited to the Android system and a web based application solution. It remains to answer if our results applies on all other systems. This is also a way of isolating some of the affecting parameters mentioned in Section~\ref{subsec:drawbacks}.
 \end{itemize}
 
 \section{Acknowledgments}
